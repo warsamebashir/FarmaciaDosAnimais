@@ -1,16 +1,17 @@
 package controllers;
-<<<<<<< HEAD
 import java.awt.event.ActionEvent;
+
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
 
-import classes.ListTableModel;
 import classes.Locality;
 import views.City_View;
 import models.City_Model;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+
+
 
 public class City_Controller{
 	private City_View cityView;
@@ -24,7 +25,7 @@ public class City_Controller{
 		view.addSaveListener(new SaveListener());
 		view.addCancelListener(new ClearListener());
 		view.addCloseListener(new CloseListener());
-		view.addSearchSingleListener(new SearchSingleListener());
+		view.addSearchListener(new SearchListener());
 		view.addDeleteListener(new DeleteListener());
 	}
 	
@@ -95,22 +96,29 @@ public class City_Controller{
 		}
 		
 	}
-	class SearchSingleListener implements ActionListener{
+	class SearchListener implements ActionListener{
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
 			try{
-				//gets the locality from the cityView
-				String city = cityView.getCity();
-				System.out.println(city);
-				ListTableModel model = cityModel.getCity(city);
-				//if it was successfully inserted into the db, the show a 
-				//successful message
-				JTable table = new JTable(model);
+				JTable table = null;
+				
+				// gets the locality from the cityView if the radioButton is selected
+				if (cityView.isRadioSelected() == false) {
+					String city = cityView.getCity();
+					
+					// get a table of cities from the model
+					table = cityModel.getCity(city);
+				} else {
+					table = cityModel.getAllCities();
+				}
+				
+			    // send a list of cities to the view
 				cityView.createTable(table);
 			}
 			catch(Exception ex){
+				ex.printStackTrace();
 				System.out.println("An error happened");
 			}
 			
@@ -118,19 +126,4 @@ public class City_Controller{
 		
 	}
 	
-=======
-import java.sql.SQLException;
-
-import views.City_View;
-import models.City_Model;
-
-public class City_Controller {
-	private City_View cityView;
-	private City_Model cityModel;
-	
-	public City_Controller() throws SQLException{
-		this.cityModel = new City_Model();
-		this.cityView = new City_View();
-	}
->>>>>>> eadc923cd8718cdc6d96396a8161c62d94b0338f
 }

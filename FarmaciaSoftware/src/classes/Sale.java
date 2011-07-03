@@ -9,6 +9,8 @@ package classes;
  * we assign an unique id to the sale, in other to track it later on
  * 
  */
+import java.sql.Time;
+
 public class Sale{
 
 	/*
@@ -34,14 +36,28 @@ public class Sale{
 	 */
 	private Integer quantity;
 	/*
+	 * defines the time that the product was sold
+	 */
+	private Time time;
+	/*
+	 * defines the type of the sale
+	 * 1 - in cash
+	 * 2 - in term
+	 * 3 - credit card
+	 */
+	private Integer saleType;
+	/*
 	 * default constructor, set the default values to the field variables
 	 */
+	@SuppressWarnings("deprecation")
 	public Sale(){
 		this.id = 0;
 		this.product = new Product();
 		this.client = new Client();
 		this.saleDate = new Date();
+		this.time = new Time(0, 0, 0);
 		this.quantity = 0;
+		this.saleType = 0;
 	}
 	/*
 	 * overrode constructor
@@ -52,13 +68,32 @@ public class Sale{
 	 * @return none
 	 * 
 	 */
-	public Sale(Product product, Client client, Date saleDate, Integer quantity){
+	public Sale(Product product, Client client, Date saleDate, Integer quantity, Integer saleType, Time time){
 		this.setProduct(product);
 		this.setClient(client);
 		this.setSaleDate(saleDate);
 		this.setQuantity(quantity);
+		this.setSaleType(saleType);
+		this.setSaleTime(time);
 	}
 
+	/*
+	 * sets the type of the sale
+	 * 1 - cash
+	 * 2 - term
+	 * 3 - credit card
+	 */
+	public void setSaleType(Integer type){
+		if(type > 0 && type < 6){
+			this.saleType = type;
+		}
+	}
+	/*
+	 * sets the time of the sale
+	 */
+	public void setSaleTime(Time time){
+		this.time = time;
+	}
 	public void setQuantity(Integer quantity) {
 		// TODO Auto-generated method stub
 		this.quantity = quantity;
@@ -140,6 +175,21 @@ public class Sale{
 		return this.saleDate;
 	}
 	
+	/*
+	 * returns the sale Type
+	 */
+	public Integer getSaleType(){
+		return this.saleType;
+	}
+	/*
+	 * returns the sale time
+	 */
+	public Time getTime(){
+		return this.time;
+	}
+	/*
+	 * returns the total of the purchase, in US$
+	 */
 	public Double getTotalSale(){
 		return this.quantity * this.product.getProductFinalPrice();
 	}

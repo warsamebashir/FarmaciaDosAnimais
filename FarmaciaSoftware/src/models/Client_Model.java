@@ -10,6 +10,7 @@ import classes.Name;
 import classes.PersonalIdentification;
 import classes.SocialSecurity;
 import classes.Telephone;
+//import classes.Balance;
 
 public class Client_Model extends Register{
 
@@ -210,7 +211,7 @@ public class Client_Model extends Register{
 			try {
 				Locality loc = new Locality("Centro", "Espinosa", "Minas Gerais", "Brasil");
 				Client client = new Client(new Name("Philippe", "Gabriel", "Souza Moraes Ribeiro"), new Telephone("3838121453", "Brasil"), 
-						new Address(449, "Avenida Dr Jose Cangussu", "39510000", loc), "ribeiro.phillipe@gmail.com", new SocialSecurity("79388360607", "Brasil"), new PersonalIdentification("MG14793883", "Brasil"), 1,
+						new Address(" Avenida Dr Jose Cangussu", "39510000", loc), "ribeiro.phillipe@gmail.com", new SocialSecurity("79388360607", "Brasil"), new PersonalIdentification("MG14793883", "Brasil"), 1,
 						new Birthday(8,2,1989));
 		
 				Client_Model model = new Client_Model();

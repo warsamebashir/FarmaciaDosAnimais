@@ -1,10 +1,7 @@
 package models;
 
 import java.util.*;
-<<<<<<< HEAD
 
-=======
->>>>>>> eadc923cd8718cdc6d96396a8161c62d94b0338f
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -23,68 +20,58 @@ public class Stock_Model extends Register{
 		this.conn = this.getConnection();
 	}
 	
+	public void createStockTable(){
+		
+		String query = "CREATE TABLE IF NOT EXITS Stock (productId INTEGER UNSIGNED NOT NULL AUTO_INCREMENT, " +
+					   "Sales_Balance_id INTEGER UNSIGNED NOT NULL, " +
+					   "sales_id INTEGER UNSIGNED NOT NULL, " +
+					   "purchase_id INTEGER UNSIGNED NOT NULL, " +
+					   "lastChange DATE NOT NULL, " +
+					   "time TIME NOT NULL, " +
+					   "quantity INTEGER UNSIGNED NULL, " + 
+					   "PRIMARY KEY(productId, sales_id, purchase_id), " +
+					   "INDEX Stock_FKIndex1(sales_id, purchase_id), " +
+					   "FOREIGN KEY(sales_id) REFERENCES Sales(id) ON DELETE NO ACTION ON UPDATE NO ACTION, " + 
+					   "FOREIGN KEY(purchase_id) REFERENCES Purchases(id) ON DELETE NO ACTION ON UPDATE NO ACTION)TYPE=InnoDB;";
+					   
+		if(this.executeQuery(query) == 0){
+			System.out.println("Table Stock was successful inserted");
+		}
+		
+		else{
+			System.out.println("Table Stock already exists");
+		}
+	}
 	public void getProductsInStockById(Integer id){
 		String query = "SELECT id, name, unity, quantity, description FROM Products WHERE id = '" + id.toString() + "';";
-		ArrayList<ArrayList<String>> list = this.executeQuery(query);
-		
-		System.out.println("Length: " + list.size());
-		for(ArrayList<String> pre : list){
-			
-			for(String value : pre){
-				System.out.println(value);
-			}
-		}
 	}
 	
 	public void getProductsInStockByName(String name){
 		
 		String query = "SELECT id, name, unity, quantity, description FROM Products WHERE name like '" + name + "%';";
 		
-		ArrayList<ArrayList<String>> list = this.executeQuery(query);
-		for(ArrayList<String> pre : list){
-			
-			for(String value : pre){
-				System.out.print(value + " ");
-			}
-			
-			System.out.println();
-		}
 	}
-
-	private ArrayList<ArrayList<String>> executeQuery(String query){
-
-		ArrayList<ArrayList<String>> list = new ArrayList<ArrayList<String>>();
+	
+	public void closeConnection() throws SQLException{
+		this.conn.close();
+	}
+	/*
+	 * executes the query, given the string
+	 */
+	public int executeQuery(String query){
+		int status = 0;
+		
 		Statement stmt;
 		try {
-				stmt = this.conn.createStatement();
+			stmt = this.conn.createStatement();
 				stmt.execute(query);
-				ResultSet rs = stmt.getResultSet ();
-
-				while (rs.next ()){
-					ArrayList<String> temp = new ArrayList<String>();
-					String id = rs.getString("id");
-					temp.add(id);
-					String name = rs.getString("name");
-					temp.add(name);
-					String unity = rs.getString("unity");
-					temp.add(unity);
-					String quantity = rs.getString("quantity");
-					temp.add(quantity);
-					String description = rs.getString("description");
-					temp.add(description);
-					
-					list.add(temp);
-				}
+				status = 0;
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return list;
-	}
-	
-	public void closeConnection() throws SQLException{
-		this.conn.close();
+		return status;
 	}
 	
 	public static void main(String args[]){

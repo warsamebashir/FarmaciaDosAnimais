@@ -28,8 +28,7 @@ public class PersonTest {
 		
 		assertEquals(person.getPersonTelephone().getTelephone(), "");
 		
-		assertEquals(person.getPersonAddress().getAddressNumber(), 0);
-		assertEquals(person.getPersonAddress().getAddressStreetName(), "");
+		assertEquals(person.getPersonAddress().getStreetAddress(), "");
 		assertEquals(person.getPersonAddress().getAddressZipCode(), "");
 
 	}
@@ -40,7 +39,7 @@ public class PersonTest {
 		Telephone telephone = new Telephone("6129658329", "United States of America");
 		Birthday birthday = new Birthday(8, 2, 1989);
 		Locality locality = new Locality("Falcon Heights", "Saint Paul", "Minnesota","United States of America");
-		Address address = new Address(1855, "Larpenteur Avenue West apt 6", "55113", locality);
+		Address address = new Address("1855 Larpenteur Avenue West apt 6", "55113", locality);
 		Person philippe = new Person(name, telephone, address, "ribei017@umn.edu", birthday);
 		
 		assertEquals(philippe.getPersonTelephone().getTelephone(), "(612) 965-8329");
@@ -68,7 +67,7 @@ public class PersonTest {
 	@Test
 	public void testSetPersonAddress() {
 		Locality locality = new Locality("Falcon Heights", "Saint Paul", "Minnesota","United States of America");
-		Address address = new Address(1855, "Larpenteur Avenue West apt #6", "55113", locality);
+		Address address = new Address("1855 Larpenteur Avenue West apt #6", "55113", locality);
 		
 		Person person = new Person();
 		person.setPersonAddress(address);
@@ -99,7 +98,7 @@ public class PersonTest {
 		Telephone telephone = new Telephone("6129658329", "United States of America");
 		Birthday birthday = new Birthday(8, 2, 1989);
 		Locality locality = new Locality("Falcon Heights", "Saint Paul", "Minnesota","United States of America");
-		Address address = new Address(1855, "Larpenteur Avenue West apt 6", "55113", locality);
+		Address address = new Address("1855 Larpenteur Avenue West apt 6", "55113", locality);
 		Person philippe = new Person(name, telephone, address, "ribei017@umn.edu", birthday);
 		
 		System.out.println(philippe.formatToString());

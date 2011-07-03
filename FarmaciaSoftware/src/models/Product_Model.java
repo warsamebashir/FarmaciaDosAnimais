@@ -27,7 +27,7 @@ public class Product_Model extends Register{
 		 * 
 		 * works nicely, successful tested;
 		 */
-		public void createTableProducts() throws SQLException{
+		public int createTableProducts() throws SQLException{
 			/*
 			 * the other is: 
 			 * ALWAYS ASSIGN THE ENGINE TO INNODB(MAKES POSSIBLE TO USE FOREIGN KEY)
@@ -38,7 +38,6 @@ public class Product_Model extends Register{
 							"PRIMARY KEY(id)," +
 							"name VARCHAR(100) NOT NULL," +
 							"unity VARCHAR(5) NOT NULL," +
-							"quantity INT NOT NULL," +
 							"pricecash FLOAT NOT NULL," +
 							"priceterm FLOAT NOT NULL," +
 							"pricefinal FLOAT NOT NULL," +
@@ -48,11 +47,13 @@ public class Product_Model extends Register{
 						Statement st = this.conn.createStatement();
 						st.execute(query);
 						System.out.println("Table Products created with success!");
+                                                return 0;
 					}
 				catch (SQLException e) {
 						// TODO Auto-generated catch block
 						System.out.println("Table already exists");
 						e.printStackTrace();
+                                                return 0;
 					}
 		}
 		/*
@@ -63,16 +64,20 @@ public class Product_Model extends Register{
 		public int addNewProduct(Product product){
 			
 			try{
-				Statement st = this.conn.createStatement();
 				
-				String query =  "INSERT INTO Products(name, unity, quantity, pricecash, priceterm, pricefinal, description) VALUES ("
-					+ product.formatToString() + ");";
-				st.execute(query);
+	String query =  "INSERT INTO Products(id, name, unity, pricecash, priceterm, pricefinal, description) VALUES ("	+ product.formatToString() + ");";
+                            if(this.executeQuery(query) == 0){
+                                System.out.println(query);
 				System.out.println("Sucessful added");
-				return 0;
-					
+                                    return 0;
+                                }
+                                    else{
+                                System.out.println("Not added");
+                                            return -1;
+                                            }
+                               					
 			}
-			catch(SQLException e){
+			catch(Exception e){
 				e.printStackTrace();
 				System.out.println("Failed to add a new product");
 				return -1;
@@ -111,6 +116,72 @@ public class Product_Model extends Register{
 			}
 			
 		}
+                
+                
+               public ListTableModel getProduct(String productName, ListTableModel model){
+		String query = "SELECT * FROM Products WHERE name='" + productName + "';";
+		System.out.println("Gets here");
+		Statement stmt;
+		
+		try {
+			stmt = this.conn.createStatement();
+			stmt.executeQuery (query);
+			ResultSet rs = stmt.getResultSet();
+                       // writeResultSet(rs);
+                        String desc = rs.getString("description");
+			model = ListTableModel.createModelFromResultSet(rs);  
+			rs.close ();
+			stmt.close ();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}			
+		return model;
+	} 
+         
+               private void writeResultSet(ResultSet resultSet) throws SQLException {
+		// ResultSet is initially before the first data set
+		while (resultSet.next()) {
+			// It is possible to get the columns via name
+			// also possible to get the columns via the column number
+			// which starts at 1
+			// e.g. resultSet.getSTring(2);
+			int id = resultSet.getInt("id");
+			String name = resultSet.getString("name");
+			String unity = resultSet.getString("unity");
+			double priceInCash = resultSet.getFloat("pricecash");
+			double priceInTerm = resultSet.getFloat("priceterm");
+			double priceFinal = resultSet.getFloat("pricefinal");
+                        String description = resultSet.getString("description");
+                        System.out.println("User: " + id);
+			System.out.println("Website: " + unity);
+			System.out.println("price cash : " + priceInCash);
+			System.out.println("price term : " + priceInTerm);
+			System.out.println("price final: " + priceFinal);
+                        System.out.println("description " + description);
+                }
+	}
+
+                
+                
+            /*
+            * executes the query, given the string
+            */
+            public int executeQuery(String query){
+		int status = 0;
+		
+		Statement stmt;
+		try {
+			stmt = this.conn.createStatement();
+				stmt.execute(query);
+				status = 0;
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return status;
+	}
 		/*
 		 * closes the MySQL connection
 		 */

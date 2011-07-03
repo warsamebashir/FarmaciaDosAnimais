@@ -63,7 +63,7 @@ public class ClientTest {
 	public void testClientFormatToString(){
 		Locality loc = new Locality("Centro", "Espinosa", "Minas Gerais", "Brasil");
 		Client client = new Client(new Name("Philippe", "Gabriel", "Souza Moraes Ribeiro"), new Telephone("3838121453", "Brasil"), 
-				new Address(449, "Avenida Dr Jose Cangussu", "39510000", loc), "ribeiro.phillipe@gmail.com", new SocialSecurity("79388360607", "Brasil"), new PersonalIdentification("MG14793883", "Brasil"), 1,
+				new Address("449 Avenida Dr Jose Cangussu", "39510000", loc), "ribeiro.phillipe@gmail.com", new SocialSecurity("79388360607", "Brasil"), new PersonalIdentification("MG14793883", "Brasil"), 1,
 				new Birthday(8,2,1989));
 		String fmt = client.formatToString();
 		assertEquals("'Philippe Gabriel Souza Moraes Ribeiro, '449 Avenida Dr Jose Cangussu, Centro, Espinosa, Minas Gerais, Brasil - 39510000', '(38) 3812-1453', '8/2/1989', 'ribeiro.phillipe@gmail.com', " +

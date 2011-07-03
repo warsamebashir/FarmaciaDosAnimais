@@ -23,20 +23,12 @@ public class ProductTest {
 		assertEquals(product.getProductPriceInCash(), 0, 0.01);
 		assertEquals(product.getProductPriceInTerm(), 0, 0.01);
 		assertEquals(product.getProductUnity(), "UN");
-<<<<<<< HEAD
-=======
-		assertEquals((int)product.getProductQuantity(), 0);
->>>>>>> eadc923cd8718cdc6d96396a8161c62d94b0338f
 		
 	}
 
 	@Test
 	public void testProductIntegerStringStringIntegerDoubleDoubleDoubleString() {
-<<<<<<< HEAD
 		Product product = new Product(1, "Ivomec 50ml", "FC",  16.50, 18.00, 17.50, "Usado contra carrapato");
-=======
-		Product product = new Product(1, "Ivomec 50ml", "FC", 10, 16.50, 18.00, 17.50, "Usado contra carrapato");
->>>>>>> eadc923cd8718cdc6d96396a8161c62d94b0338f
 		
 		assertEquals((int)product.getProductId(), 1);
 		assertEquals(product.getProductDescription(), "Usado contra carrapato");
@@ -45,12 +37,6 @@ public class ProductTest {
 		assertEquals(product.getProductPriceInCash(), 16.50, 0.01);
 		assertEquals(product.getProductPriceInTerm(), 18.00, 0.01);
 		assertEquals(product.getProductUnity(), "FC");
-<<<<<<< HEAD
-=======
-		assertEquals((int)product.getProductQuantity(), 10);
-		
-		
->>>>>>> eadc923cd8718cdc6d96396a8161c62d94b0338f
 	}
 
 	/*
@@ -95,18 +81,6 @@ public class ProductTest {
 		assertEquals(product.getProductPriceInCash(), 0, 0.01);
 	}
 
-<<<<<<< HEAD
-=======
-	@Test
-	public void testSetProductQuantity() {
-		Product product = new Product();
-		product.setProductQuantity(100);
-		assertEquals((int)product.getProductQuantity(), 100);
-		
-		product.setProductQuantity(-19);
-		assertEquals((int)product.getProductQuantity(), 0);
-	}
->>>>>>> eadc923cd8718cdc6d96396a8161c62d94b0338f
 
 	@Test
 	public void testSetProductName() {
@@ -146,11 +120,7 @@ public class ProductTest {
 
 	@Test
 	public void testFormatToString() {
-<<<<<<< HEAD
 		Product product = new Product(1, "Ivomec 50ml", "FC", 16.50, 18.00, 17.50, "Usado contra carrapato");
-=======
-		Product product = new Product(1, "Ivomec 50ml", "FC", 10, 16.50, 18.00, 17.50, "Usado contra carrapato");
->>>>>>> eadc923cd8718cdc6d96396a8161c62d94b0338f
 		
 		assertEquals((int)product.getProductId(), 1);
 		assertEquals(product.getProductDescription(), "Usado contra carrapato");
@@ -159,10 +129,6 @@ public class ProductTest {
 		assertEquals(product.getProductPriceInCash(), 16.50, 0.01);
 		assertEquals(product.getProductPriceInTerm(), 18.00, 0.01);
 		assertEquals(product.getProductUnity(), "FC");
-<<<<<<< HEAD
-=======
-		assertEquals((int)product.getProductQuantity(), 10);
->>>>>>> eadc923cd8718cdc6d96396a8161c62d94b0338f
 		
 		String pdt = product.formatToString();
 		assertEquals(pdt, pdt);

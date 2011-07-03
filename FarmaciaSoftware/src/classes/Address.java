@@ -13,6 +13,12 @@ package classes;
  *  private Locality locality: defines the remaining locality of an address  e.g: Dinkytown, Minneapolis, Minnesota, USA
  */
 public class Address {
+    
+        /*
+         *defines the city
+         */
+        private String addressCityName;
+    
 	/*
 	 * defines the address name
 	 */
@@ -37,6 +43,7 @@ public class Address {
 		this.addressStreetName = "";
 		this.addressNumber = 0;
 		this.addressZipCode = "";
+                this.addressCityName = "";
 		this.locality = new Locality();
 	}
 	
@@ -64,7 +71,12 @@ public class Address {
 		// TODO Auto-generated method stub
 		this.addressZipCode = zipCode;
 	}
-
+        
+        public void setAddressCity(String city) {
+		// TODO Auto-generated method stub
+		this.addressCityName = city;
+	}
+        
 	/*
 	 * sets the address number
 	 */
@@ -85,7 +97,15 @@ public class Address {
 		// TODO Auto-generated method stub
 		this.addressStreetName = street;
 	}
-	
+	/*
+         * return the city
+         */
+        public String getAddressCity(){
+        
+        return this.addressCityName;
+        
+        }
+        
 	/*
 	 * returns the zipCode
 	 */

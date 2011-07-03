@@ -74,7 +74,4 @@ public class Company {
 		return this.companyId;
 	}
 	
-	
-	
-	
 }

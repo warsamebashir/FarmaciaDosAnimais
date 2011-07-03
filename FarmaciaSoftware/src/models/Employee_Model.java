@@ -63,15 +63,15 @@ public class Employee_Model extends Register{
 	 * works nicely
 	 * successful tested
 	 */
-	public void addNewEmployee(Employee employee){
+	public int insertNewEmployee(Employee employee){
 		
 		try{
 			Statement st = this.conn.createStatement();
 			
 			String query =  "INSERT INTO Employees(name, address, birthday, telephone, email, previousEmployed," +
 					"socialSecurity, salary, startingDate, region, city, state, country) VALUES('" 
-					+ employee.getPersonName().formatToString() + "', '"
-					+ employee.getPersonAddress().formatToString() + "', '"
+					+ employee.getPersonName().formatToString() + "', "
+					+ employee.getPersonAddress().formatToString() + ", '"
 					+ employee.getPersonBirthday().formatToString() + "', '"
 					+ employee.getPersonTelephone().getTelephone() + "', '"
 					+ employee.getEmployeeEmail() + "', "
@@ -84,13 +84,17 @@ public class Employee_Model extends Register{
 					+ employee.getPersonAddress().getAddressLocality().getState() + "', '"
 					+ employee.getPersonAddress().getAddressLocality().getCountry() + "');";
 			
+			System.out.println(query);
+			
 			System.out.println("Sucessful added");
 			st.execute(query);
-				
+			
+			return 0;
 		}
 		catch(SQLException e){
 			e.printStackTrace();
 			System.out.println("Failed to add a new employee");
+			return -1;
 			
 		}
 

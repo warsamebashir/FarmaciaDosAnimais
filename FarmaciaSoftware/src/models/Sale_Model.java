@@ -1,6 +1,5 @@
 package models;
 import java.sql.*;
-<<<<<<< HEAD
 import java.util.*;
 
 import classes.*;
@@ -9,11 +8,6 @@ import classes.Date;
 /*
  * class not completed yet
  */
-=======
-
-import classes.Sale;
-
->>>>>>> eadc923cd8718cdc6d96396a8161c62d94b0338f
 public class Sale_Model extends Register{
 
 	/**
@@ -36,17 +30,23 @@ public class Sale_Model extends Register{
 	 */
 	public void createSalesTable(){
 		//creates the SQL query
-		String query =  "CREATE TABLE IF NOT EXISTS Sales(id INT NOT NULL AUTO_INCREMENT,"
-			+ "PRIMARY KEY(id)," +
-				"productId INT NOT NULL," + 
-				"productName VARCHAR(100) NOT NULL," +
-				"productQuantity VARCHAR(100) NOT NULL," +
-				"productUnity VARCHAR(5) NOT NULL," +
-				"unitySalePrice FLOAT NOT NULL," +
-				"totalPurchase FLOAT NOT NULL," +
-				"clientId INT NOT NULL," +
-				"customerName VARCHAR(100) NOT NULL," +
-				"saleDate DATE NOT NULL);";
+		String query = "CREATE TABLE IF NOT EXISTS Sales ( id INTEGER UNSIGNED NOT NULL AUTO_INCREMENT, " +
+					   "clients_id INTEGER UNSIGNED NOT NULL, " +
+					   "seller_id INTEGER UNSIGNED NOT NULL, " +
+					   "product_id INTEGER UNSIGNED NOT NULL, " +
+					   "time TIME NULL, " +
+					   "date DATE NULL, " +
+					   "quantity INTEGER UNSIGNED NULL, " +
+					   "unityPrice FLOAT NULL, " +
+					   "typeSale INTEGER UNSIGNED NULL, " +
+					   "totalSale FLOAT NULL, " +
+					   "PRIMARY KEY(id) " +
+					   "INDEX Sales_FKIndex1(product_id), " +
+					   "INDEX Sales_FKIndex2(seller_id), " +
+					   "INDEX Sales_FKIndex3(clients_id), " +
+					   "FOREIGN KEY(Product_id) REFERENCES Product(id) ON DELETE NO ACTION ON UPDATE NO ACTION, " +
+					   "FOREIGN KEY(Seller_id) REFERENCES Seller(id) ON DELETE NO ACTION ON UPDATE NO ACTION, " +
+					   "FOREIGN KEY(Clients_id) REFERENCES Clients(id) ON DELETE NO ACTION ON UPDATE NO ACTION) TYPE=InnoDB;";
 		
 		//checks if it went all right
 		if(this.executeQuery(query) == 0){
@@ -71,11 +71,8 @@ public class Sale_Model extends Register{
 		else{
 			System.out.println("Table already exists");
 		}
-					
-		
 	}
 	
-<<<<<<< HEAD
 	public ArrayList<Sale> getAllSales(Date date){
 		ArrayList<Sale> sales = new ArrayList<Sale>();
 		String query = "SELECT * FROM Sales WHERE date=" + date.formatToString() + ";";
@@ -91,8 +88,6 @@ public class Sale_Model extends Register{
 		return sale;
 	}
 	
-=======
->>>>>>> eadc923cd8718cdc6d96396a8161c62d94b0338f
 	private int executeQuery(String query){
 		int status = 0;
 		
@@ -109,7 +104,6 @@ public class Sale_Model extends Register{
 		}
 		return status;
 	}
-<<<<<<< HEAD
 	private ArrayList<Sale> getList(String query){
 
 		ArrayList<Sale> list = new ArrayList<Sale>();
@@ -134,11 +128,6 @@ public class Sale_Model extends Register{
 	public static void main(String args[]){
 		Product p = new Product(1, "Ivomec 50ml", "UN", 12.50, 14.00, 13.00, "matar carrapato");
 	
-=======
-	
-	public static void main(String args[]){
-		
->>>>>>> eadc923cd8718cdc6d96396a8161c62d94b0338f
 		try {
 			Sale_Model model = new Sale_Model();
 			model.createSalesTable();

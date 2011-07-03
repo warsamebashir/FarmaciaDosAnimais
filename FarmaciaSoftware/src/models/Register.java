@@ -1,14 +1,7 @@
 package models;
-<<<<<<< HEAD
 import java.sql.*;
 
 public class Register{
-=======
-import javax.swing.*;
-import java.sql.*;
-
-public class Register extends JFrame{
->>>>>>> eadc923cd8718cdc6d96396a8161c62d94b0338f
 	
 	/**
 	 * 
@@ -27,8 +20,5 @@ public class Register extends JFrame{
 		return this.connection;
 	}
 	
-<<<<<<< HEAD
 	
-=======
->>>>>>> eadc923cd8718cdc6d96396a8161c62d94b0338f
 }

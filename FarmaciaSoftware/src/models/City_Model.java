@@ -1,13 +1,11 @@
 package models;
-<<<<<<< HEAD
-import classes.ListTableModel;
 import classes.Locality;
 
-=======
-import classes.Locality;
->>>>>>> eadc923cd8718cdc6d96396a8161c62d94b0338f
 import java.sql.*;
 import java.util.*;
+import javax.swing.*;
+import javax.swing.table.*;
+
 /*
  * Class City_Model, deals with the 'Cities' table;
  * class written by Philippe Ribeiro, 
@@ -24,29 +22,25 @@ public class City_Model extends Register{
 	 */
 	private static final long serialVersionUID = 1L;
 	private Connection conn;
+	public static String[] columns = {"Region", "City", "State", "Country"};
+	private final int length = 10;
+	private Object[][] elements;
 	
 	public City_Model() throws SQLException {
 		super();
 		// TODO Auto-generated constructor stub
 		this.conn = this.getConnection();
+		this.elements = null;
 	}
 	/*
 	 * creates a table, if is already does not exist
 	 */
 	public void createTableCities(){
-<<<<<<< HEAD
 		String query =  "CREATE TABLE IF NOT EXISTS Cities(id INT NOT NULL AUTO_INCREMENT,"
 						+ "PRIMARY KEY(id)," +
 							"region VARCHAR(100) NOT NULL," +
 							"city VARCHAR(100) NOT NULL," +
 							"state VARCHAR(10) NOT NULL," +
-=======
-		String query =  "CREATE TABLE IF NOT EXISTS Cities(id INT NOT NULL AUTO_INCREMENT."
-						+ "PRIMARY KEY(id)," +
-							"region VARCHAR(100) NOT NULL" +
-							"city VARCHAR(100) NOT NULL" +
-							"state VARCHAR(10) NOT NULL" +
->>>>>>> eadc923cd8718cdc6d96396a8161c62d94b0338f
 							"country VARCHAR(30) NOT NULL);";
 		if(this.executeQuery(query) == 0){
 			System.out.println("Table cities was successful created");
@@ -58,27 +52,16 @@ public class City_Model extends Register{
 	/*
 	 * inserts a new city into the database
 	 */
-<<<<<<< HEAD
 	public int insertNewCity(Locality locality){
-=======
-	public void insertNewCity(Locality locality){
->>>>>>> eadc923cd8718cdc6d96396a8161c62d94b0338f
 		
 		System.out.println(locality.formatToString());
 		String query = "INSERT INTO Cities(region, city, state, country) VALUES (" + locality.formatToString() + ");";
 		System.out.println(query);
 		if(this.executeQuery(query) == 0){
-<<<<<<< HEAD
 			return 0;
 		}
 		else{
 			return -1;
-=======
-			System.out.println("New city was successfully inserted");
-		}
-		else{
-			System.out.println("The insertion was not successful");
->>>>>>> eadc923cd8718cdc6d96396a8161c62d94b0338f
 		}
 	}
 	/*
@@ -101,39 +84,72 @@ public class City_Model extends Register{
 	 * ArrayList<Locality>
 	 * 
 	 */
-	public ArrayList<Locality> getAllCities(){
+	public JTable getAllCities(){
 		String query = "SELECT * FROM Cities;";
-		ArrayList<Locality> results = new ArrayList<Locality>();
 		
+		String[] columns = { "Region", "City", "State", "Country" };
+		
+		JTable table = null;
 		Statement stmt;
+		
 		try {
 			stmt = this.conn.createStatement();
 			stmt.executeQuery (query);
 			ResultSet rs = stmt.getResultSet ();
-
-			while (rs.next ()){
-				int idVal = rs.getInt ("id");
-				String region = rs.getString ("region");
-				String city = rs.getString ("city");
-				String state = rs.getString("state");
-				String country = rs.getString("country");
+			
+			elements = new Object[10][4];
+			
+			//store row data
+			//the number of iterations must be equal to rowSize
+			//in order for this to work
+			int index = 0;
+			while(rs.next()) {
 				
-				Locality newLocality = new Locality(region, city, state, country);
-				results.add(newLocality);
+				if (index+1 % length == 0) {
+					resize();
+				}
 				
-				System.out.println ("id = " + idVal + ", region = " + region + ", city = " + city + ", state = " + state + ", country = " + country);
-					   
+				elements[index][0] = rs.getString("region");
+				elements[index][1] = rs.getString("city");
+				elements[index][2] = rs.getString("state");
+				elements[index][3] = rs.getString("country");
+				
+				//System.out.println(rs.getString("region") + " " + rs.getString("city") + " " + rs.getString("state") + " " + rs.getString("country"));
+				
+				index++;
+				
+				
 			}
 			
-			rs.close ();
-			stmt.close ();
+			table = new JTable(elements, columns);
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}			
-		return results;
+		}	
+		
+		
+		
+		return table;
 	}
 
+	// Creates a new array with a length double the size of the previous array
+	// Copies all information in the array to new array
+	public void resize(){
+		Object[][] temp = elements;
+		
+		int size = elements.length;
+		
+		elements = new Object[size*2][4];
+		
+		int i = 0;
+		while (i < temp.length) {
+			for (int j = 0; j < 4; j++) {
+				elements[i][j] = temp[i][j];
+			}
+		}
+	}
+	
 	/*
 	 * Queries into the database given a city, returns
 	 * all the values associates with that city
@@ -141,61 +157,54 @@ public class City_Model extends Register{
 	 * 
 	 *  returns an ArrayList
 	 */
-<<<<<<< HEAD
-	public ListTableModel getCity(String city){
+	public JTable getCity(String city){
 		String query = "SELECT * FROM Cities WHERE city='" + city + "';";
 		
-		ListTableModel model = null;
+		String[] columns = { "Region", "City", "State", "Country" };
+		
+		JTable table = null;
 		Statement stmt;
 		
-=======
-	public ArrayList<Locality> getCity(String city){
-		String query = "SELECT * FROM Cities WHERE city='" + city + "';";
-		
-		ArrayList<Locality> results = new ArrayList<Locality>();
-		
-		Statement stmt;
->>>>>>> eadc923cd8718cdc6d96396a8161c62d94b0338f
 		try {
 			stmt = this.conn.createStatement();
 			stmt.executeQuery (query);
 			ResultSet rs = stmt.getResultSet ();
-<<<<<<< HEAD
-			model = ListTableModel.createModelFromResultSet(rs);  
-
-=======
-
-			while (rs.next ()){
-				int idVal = rs.getInt ("id");
-				String region = rs.getString ("region");
-				String city1 = rs.getString ("city");
-				String state = rs.getString("state");
-				String country = rs.getString("country");
+			
+			elements = new Object[10][4];
+			//store row data
+			//the number of iterations must be equal to rowSize
+			//in order for this to work
+			int index = 0;
+			while(rs.next()) {
 				
-				Locality newLocality = new Locality(region, city1, state, country);
-				results.add(newLocality);
+				if (index+1 % length == 0) {
+					resize();
+				}
 				
-				System.out.println ("id = " + idVal + ", region = " + region + ", city = " + city1 + ", state = " + state + ", country = " + country);
-					   
+				elements[index][0] = rs.getString("region");
+				elements[index][1] = rs.getString("city");
+				elements[index][2] = rs.getString("state");
+				elements[index][3] = rs.getString("country");
+				
+				index++;
+				
+				
 			}
 			
->>>>>>> eadc923cd8718cdc6d96396a8161c62d94b0338f
-			rs.close ();
-			stmt.close ();
+			table = new JTable(elements, columns);
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}			
-<<<<<<< HEAD
-		return model;
-=======
-		return results;
->>>>>>> eadc923cd8718cdc6d96396a8161c62d94b0338f
+		}
+		
+		
+		return table;
+		
 	}
 	/*
 	 * deletes a given city
 	 */
-<<<<<<< HEAD
 	public int deleteCity(String city){
 		String query = "DELETE FROM Cities WHERE city='" + city + "';";
 		
@@ -204,16 +213,6 @@ public class City_Model extends Register{
 		}
 		else{
 			return 1;
-=======
-	public void deleteCity(String city){
-		String query = "DELETE FROM Cities WHERE city='%" + city + "%';";
-		
-		if(this.executeQuery(query) == 0){
-			System.out.println("City has been Successfully deleted");
-		}
-		else{
-			System.out.println("The deletion was unsuccessful");
->>>>>>> eadc923cd8718cdc6d96396a8161c62d94b0338f
 		}
 	}
 	
@@ -227,10 +226,6 @@ public class City_Model extends Register{
 		try {
 			stmt = this.conn.createStatement();
 				stmt.execute(query);
-<<<<<<< HEAD
-=======
-				System.out.println("Query executed Successfully");
->>>>>>> eadc923cd8718cdc6d96396a8161c62d94b0338f
 				status = 0;
 			
 		} catch (SQLException e) {

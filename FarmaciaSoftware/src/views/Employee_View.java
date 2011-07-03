@@ -1,10 +1,19 @@
 package views;
 
-<<<<<<< HEAD
-import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-=======
->>>>>>> eadc923cd8718cdc6d96396a8161c62d94b0338f
+import models.Employee_Model;
+
+import classes.Address;
+import classes.Birthday;
+import classes.Date;
+import classes.Employee;
+import classes.Locality;
+import classes.Name;
+import classes.Salary;
+import classes.SocialSecurity;
+import classes.Telephone;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -26,11 +35,126 @@ public class Employee_View extends javax.swing.JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	private Employee employee;
+	private Employee_Model model;
+	
 	/** Creates new form Employee_View */
-    public Employee_View() {
+    public Employee_View(Employee_Model model) {
+    	this.model = model;
+    	this.employee = new Employee();
+    	this.setTitle("Funcionarios");
         initComponents();
     }
 
+    public Employee getEmployee(){
+    	return this.employee;
+    }
+    public void close(){
+    	this.dispose();
+    }
+    
+    public void update(){
+    	
+    }
+    
+    public void delete(){
+    	
+    }
+    
+    public void add(){
+    	// create a new employee and add to database
+    	
+    	// create name
+    	Name name = new Name(this.jTextField1.getText(), this.jTextField2.getText(), this.jTextField3.getText());
+    	
+    	// create birthday
+    	Birthday birthday = new Birthday(Integer.parseInt(this.jTextField5.getText()), 
+    									 Integer.parseInt(this.jTextField6.getText()), 
+    									 Integer.parseInt(this.jTextField7.getText()));
+    	
+    	// create new address
+    	Address address = new Address(jTextField8.getText() + "\n" + jTextField9.getText(), 
+    								  jTextField11.getText(), 
+    								  new Locality("", jTextField12.getText(), jTextField10.getText(), ""));
+    	
+    	System.out.println(address.formatToString());
+    	// TODO create ssn
+    	SocialSecurity ssn = new SocialSecurity(jTextField14.getText(), "Brazil");
+    	
+    	// TODO create salary
+    	Salary salary = new Salary(Double.parseDouble(jTextField15.getText()), 40.0, 1);
+    	
+    	// TODO create telephone
+    	Telephone telephone = new Telephone(jTextField4.getText(), "Brazil");
+    	
+    	// create email
+    	String email = jTextField13.getText();
+    	
+    	// create previously employed
+    	boolean previouslyEmployed = jCheckBox1.isSelected();
+    	
+    	// create start date
+    	Date dateStart = new Date(Integer.parseInt(jTextField17.getText()), 
+    							  Integer.parseInt(jTextField18.getText()), 
+    							  Integer.parseInt(jTextField19.getText()));
+    	
+    	// add the employee
+    	this.employee = new Employee(birthday, name, ssn, salary, telephone, address, email, previouslyEmployed, dateStart);
+    }
+    
+    public void reset(){
+      	this.jTextField1.setText("");
+    	this.jTextField2.setText("");
+    	this.jTextField3.setText("");
+    	this.jTextField4.setText("");
+    	this.jTextField5.setText("");
+    	this.jTextField6.setText("");
+    	this.jTextField7.setText("");
+    	this.jTextField8.setText("");
+    	this.jTextField9.setText("");
+    	this.jTextField10.setText("");
+    	this.jTextField11.setText("");
+    	this.jTextField12.setText("");
+    	this.jTextField13.setText("");
+    	this.jTextField14.setText("");
+    	this.jTextField15.setText("");
+    	this.jTextField16.setText("");
+    	this.jTextField17.setText("");
+    	this.jTextField18.setText("");
+    	this.jTextField19.setText("");
+    	this.jTextField20.setText("");
+    	this.jTextField21.setText("");
+    	this.jTextField22.setText("");
+    	this.jTextField23.setText("");
+    	this.jTextField24.setText("");
+    	this.jTextField25.setText("");
+    	this.jTextField26.setText("");
+    	this.jTextField27.setText("");
+    	this.jTextField28.setText("");
+    	this.jTextField29.setText("");
+    	this.jTextField30.setText("");
+    	this.jTextField31.setText(""); 
+    }
+    
+    public void addSaveListener(ActionListener save){
+    	this.jButton5.addActionListener(save);
+    }
+    
+    public void addDeleteListener(ActionListener delete){
+    	
+    }
+    
+    public void addUpdateListener(ActionListener update){
+    	
+    }
+    public void addCloseListener(ActionListener close){
+    	
+    }
+    
+    public void addCancelListener(ActionListener cancel){
+    	this.jButton7.addActionListener(cancel);
+    	this.jButton6.addActionListener(cancel);
+    }
     /** This method is called from within the constructor to
      * initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is
@@ -149,28 +273,31 @@ public class Employee_View extends javax.swing.JFrame {
         jLabel42.setText("Update/Delete Employee");
         jLabel42.setName("jLabel42"); // NOI18N
 
-        jTextField26.setText("jTextField23");
+        jTextField26.setText("");
         jTextField26.setName("jTextField26"); // NOI18N
+        jTextField26.setColumns(9);
 
         jLabel43.setText("Employee ID");
         jLabel43.setName("jLabel43"); // NOI18N
 
-        jTextField27.setText("jTextField22");
+        jTextField27.setText("");
         jTextField27.setName("jTextField27"); // NOI18N
 
         jLabel44.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
         jLabel44.setText("Last");
         jLabel44.setName("jLabel44"); // NOI18N
 
-        jTextField28.setText("jTextField21");
+        jTextField28.setText("");
         jTextField28.setName("jTextField28"); // NOI18N
+        jTextField28.setColumns(9);
 
         jLabel45.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
         jLabel45.setText("Middle");
         jLabel45.setName("jLabel45"); // NOI18N
 
-        jTextField29.setText("jTextField20");
+        jTextField29.setText("");
         jTextField29.setName("jTextField29"); // NOI18N
+        jTextField29.setColumns(9);
 
         jLabel46.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
         jLabel46.setText("First");
@@ -179,8 +306,9 @@ public class Employee_View extends javax.swing.JFrame {
         jLabel47.setText("Telephone");
         jLabel47.setName("jLabel47"); // NOI18N
 
-        jTextField30.setText("jTextField24");
+        jTextField30.setText("");
         jTextField30.setName("jTextField30"); // NOI18N
+        jTextField30.setColumns(9);
 
         jLabel48.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
         jLabel48.setText("(###)-###-####");
@@ -193,8 +321,9 @@ public class Employee_View extends javax.swing.JFrame {
         jLabel49.setText("Example: johndoe@yahoo.com");
         jLabel49.setName("jLabel49"); // NOI18N
 
-        jTextField31.setText("jTextField25");
-        jTextField31.setName("jTextField31"); // NOI18N
+        jTextField31.setText("");
+        jTextField31.setName("jTextField31");
+        jTextField31.setColumns(9);// NOI18N
 
         jLabel50.setText("Email Address");
         jLabel50.setName("jLabel50"); // NOI18N
@@ -335,13 +464,15 @@ public class Employee_View extends javax.swing.JFrame {
         jLabel33.setText("Name");
         jLabel33.setName("jLabel33"); // NOI18N
 
-        jTextField20.setText("jTextField20");
+        jTextField20.setText("");
         jTextField20.setName("jTextField20"); // NOI18N
+        jTextField20.setColumns(9);
 
-        jTextField21.setText("jTextField21");
+        jTextField21.setText("");
         jTextField21.setName("jTextField21"); // NOI18N
+        jTextField21.setColumns(9);
 
-        jTextField22.setText("jTextField22");
+        jTextField22.setText("");
         jTextField22.setName("jTextField22"); // NOI18N
 
         jLabel34.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
@@ -359,7 +490,7 @@ public class Employee_View extends javax.swing.JFrame {
         jLabel37.setText("Employee ID");
         jLabel37.setName("jLabel37"); // NOI18N
 
-        jTextField23.setText("jTextField23");
+        jTextField23.setText("");
         jTextField23.setName("jTextField23"); // NOI18N
 
         jButton1.setText("Search");
@@ -384,15 +515,16 @@ public class Employee_View extends javax.swing.JFrame {
         jLabel38.setText("Telephone");
         jLabel38.setName("jLabel38"); // NOI18N
 
-        jTextField24.setText("jTextField24");
+        jTextField24.setText("");
         jTextField24.setName("jTextField24"); // NOI18N
 
         jLabel39.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
         jLabel39.setText("(###)-###-####");
         jLabel39.setName("jLabel39"); // NOI18N
 
-        jTextField25.setText("jTextField25");
+        jTextField25.setText("");
         jTextField25.setName("jTextField25"); // NOI18N
+        jTextField25.setColumns(9);
 
         jLabel40.setText("Email Address");
         jLabel40.setName("jLabel40"); // NOI18N
@@ -518,14 +650,17 @@ public class Employee_View extends javax.swing.JFrame {
         jLabel7.setText("Personal Information");
         jLabel7.setName("jLabel7"); // NOI18N
 
-        jTextField1.setText("jTextField1");
+        jTextField1.setText("");
         jTextField1.setName("jTextField1"); // NOI18N
+        jTextField1.setColumns(8);
 
-        jTextField2.setText("jTextField2");
+        jTextField2.setText("");
         jTextField2.setName("jTextField2"); // NOI18N
+        jTextField2.setColumns(8);
 
-        jTextField3.setText("jTextField3");
+        jTextField3.setText("");
         jTextField3.setName("jTextField3"); // NOI18N
+        jTextField3.setColumns(8);
 
         jLabel8.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
         jLabel8.setText("First");
@@ -539,16 +674,16 @@ public class Employee_View extends javax.swing.JFrame {
         jLabel10.setText("Last");
         jLabel10.setName("jLabel10"); // NOI18N
 
-        jTextField4.setText("jTextField4");
+        jTextField4.setText("");
         jTextField4.setName("jTextField4"); // NOI18N
 
-        jTextField5.setText("jTextField5");
+        jTextField5.setText("");
         jTextField5.setName("jTextField5"); // NOI18N
 
-        jTextField6.setText("jTextField6");
+        jTextField6.setText("");
         jTextField6.setName("jTextField6"); // NOI18N
 
-        jTextField7.setText("jTextField7");
+        jTextField7.setText("");
         jTextField7.setName("jTextField7"); // NOI18N
 
         jLabel11.setText("/");
@@ -556,6 +691,7 @@ public class Employee_View extends javax.swing.JFrame {
 
         jLabel12.setText("/");
         jLabel12.setName("jLabel12"); // NOI18N
+        
 
         jLabel13.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
         jLabel13.setText("Month");
@@ -569,20 +705,23 @@ public class Employee_View extends javax.swing.JFrame {
         jLabel15.setText("Year");
         jLabel15.setName("jLabel15"); // NOI18N
 
-        jTextField8.setText("jTextField8");
+        jTextField8.setText("");
         jTextField8.setName("jTextField8"); // NOI18N
 
-        jTextField9.setText("jTextField9");
+        jTextField9.setText("");
         jTextField9.setName("jTextField9"); // NOI18N
 
-        jTextField10.setText("jTextField10");
+        jTextField10.setText("");
         jTextField10.setName("jTextField10"); // NOI18N
+        jTextField10.setColumns(5);
 
-        jTextField11.setText("jTextField11");
+        jTextField11.setText("");
         jTextField11.setName("jTextField11"); // NOI18N
+        jTextField11.setColumns(5);
 
-        jTextField12.setText("jTextField12");
+        jTextField12.setText("");
         jTextField12.setName("jTextField12"); // NOI18N
+        jTextField12.setColumns(6);
 
         jLabel6.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
         jLabel6.setText("Address Line 1");
@@ -608,8 +747,9 @@ public class Employee_View extends javax.swing.JFrame {
         jLabel20.setText("Zip Code");
         jLabel20.setName("jLabel20"); // NOI18N
 
-        jTextField13.setText("jTextField13");
+        jTextField13.setText("");
         jTextField13.setName("jTextField13"); // NOI18N
+        jTextField13.setColumns(7);
 
         jLabel21.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
         jLabel21.setText("Example: johndoe@yahoo.com");
@@ -627,7 +767,7 @@ public class Employee_View extends javax.swing.JFrame {
         jLabel23.setText("Social Security Number:");
         jLabel23.setName("jLabel23"); // NOI18N
 
-        jTextField14.setText("jTextField14");
+        jTextField14.setText("");
         jTextField14.setName("jTextField14"); // NOI18N
 
         jLabel24.setText("Salary :  $");
@@ -636,29 +776,30 @@ public class Employee_View extends javax.swing.JFrame {
         jLabel25.setText("Employee ID : ");
         jLabel25.setName("jLabel25"); // NOI18N
 
-        jTextField15.setText("jTextField15");
+        jTextField15.setText("");
         jTextField15.setName("jTextField15"); // NOI18N
 
-        jTextField16.setText("jTextField16");
+        jTextField16.setText("");
         jTextField16.setName("jTextField16"); // NOI18N
 
         jLabel26.setText("Start Date : ");
         jLabel26.setName("jLabel26"); // NOI18N
 
-        jTextField17.setText("jTextField17");
+        jTextField17.setText("");
         jTextField17.setName("jTextField17"); // NOI18N
 
         jLabel27.setText("/");
         jLabel27.setName("jLabel27"); // NOI18N
 
-        jTextField18.setText("jTextField18");
+        jTextField18.setText("");
         jTextField18.setName("jTextField18"); // NOI18N
 
         jLabel28.setText("/");
         jLabel28.setName("jLabel28"); // NOI18N
 
-        jTextField19.setText("jTextField19");
+        jTextField19.setText("");
         jTextField19.setName("jTextField19"); // NOI18N
+        jTextField19.setColumns(4);
 
         jLabel29.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
         jLabel29.setText("Month");
@@ -934,7 +1075,6 @@ public class Employee_View extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>                        
-<<<<<<< HEAD
     /*
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -945,9 +1085,6 @@ public class Employee_View extends javax.swing.JFrame {
         });
     }
     */
-=======
-
->>>>>>> eadc923cd8718cdc6d96396a8161c62d94b0338f
     /**
      * @param args the command line arguments
      */
@@ -959,6 +1096,7 @@ public class Employee_View extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
+    
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -1051,11 +1189,7 @@ public class Employee_View extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
-<<<<<<< HEAD
     // End of variables declaration  
 
 		
-=======
-    // End of variables declaration                   
->>>>>>> eadc923cd8718cdc6d96396a8161c62d94b0338f
 }
