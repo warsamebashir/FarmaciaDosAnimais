@@ -11,6 +11,7 @@ import javax.swing.*;
 import models.City_Model;
 import models.Employee_Model;
 import models.Product_Model;
+import models.Supplier_Model;
 
 /*
  * Main interface of the program
@@ -52,7 +53,7 @@ public class Menu extends JFrame implements ActionListener, ItemListener{
 		this.createSalesMenu();
 		this.createAccountsReceivable();
 		
-		//CYB·RT·XTRON Inc. · 
+		//CYBRTXTRON Inc.  
 		displayLabel = new JLabel("Farmacia dos Animais", SwingConstants.CENTER);
 		displayLabel.setForeground(Color.DARK_GRAY);
 		displayLabel.setFont(new Font("Serif", Font.PLAIN, 72));
@@ -209,7 +210,15 @@ public class Menu extends JFrame implements ActionListener, ItemListener{
 				        });
 					}});
 	}
-	public void addRegisterSeller(JMenuItem item, JMenu menu){
+	
+        /**
+         * 
+         * @param item
+         * @param menu 
+         */
+        
+        
+        public void addRegisterSeller(JMenuItem item, JMenu menu){
 		item.setMnemonic('A');
 		menu.add(item);
 		item.addActionListener(
@@ -226,6 +235,47 @@ public class Menu extends JFrame implements ActionListener, ItemListener{
 				        });
 					}});
 	}
+        
+        /**
+         * 
+         * @param item
+         * @param menu 
+         */
+        
+        public void addRegisterSupplier(JMenuItem item, JMenu menu){
+		item.setMnemonic('A');
+		menu.add(item);
+		item.addActionListener(
+				
+				new ActionListener(){
+					
+					public void actionPerformed(ActionEvent event){
+
+						java.awt.EventQueue.invokeLater(new Runnable() {
+
+				            public void run() {
+				                
+                                                
+                                                try{
+                                                
+                                                Supplier_Model model = new Supplier_Model();
+				            	Supplier_View view = new Supplier_View(model);
+				            	Supplier_Controller supplier = new Supplier_Controller(model, view);
+						supplier.displayProductView();
+                                                
+                                                
+                                                }
+                                                catch(Exception e){
+                                                
+                                                System.out.println("Error in add register supplier " + e);
+                                                }
+                                                                                              
+                                                                                            
+				            }
+				        });
+					}});
+	}
+        
 	
 	/*
 	 * Used the "Register Membership", which could be a new employee, a new product or a new sale
@@ -304,7 +354,7 @@ public class Menu extends JFrame implements ActionListener, ItemListener{
 		 */
 		
 		JMenuItem suppliers = new JMenuItem("Fornecedores");
-		this.addMenuItemListener(suppliers, register);
+		this.addRegisterSupplier(suppliers, register);
 		
 		/*
 		 * register a new employee

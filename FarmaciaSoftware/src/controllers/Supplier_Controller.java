@@ -22,7 +22,7 @@ public class Supplier_Controller {
     
 	private Supplier_View supplierView;
 	private Supplier_Model supplierModel;
-        private Supplier supplier;
+        private Supplier supplier = new Supplier();
  
         public Supplier_Controller(Supplier_Model model, Supplier_View view){
   
@@ -46,15 +46,18 @@ public class Supplier_Controller {
 
         @Override
         public void actionPerformed(ActionEvent ae) {
-            
+                                    
+
+
         try{
+                                   
+                        supplierView.setSupplier();
+                        System.out.println(supplier.formatTostring());  
                        //gets the product from the Product View
                         supplierView.setSupplier();
                       
                         supplier = supplierView.getSupplier();
-                        System.out.println(supplier.formatTostring());
                        
-                        supplierModel.createTableCities();
                         if(supplierModel.insertNewSupplier(supplier) == 0){
 					JOptionPane.showMessageDialog(null, "New supplier was sucessfully added");
 				}
@@ -64,9 +67,9 @@ public class Supplier_Controller {
                     
                     
                     }
-                    catch(Exception evt){
+       catch(Exception evt){
                     
-                    System.out.println("Error: Something went wrong");
+                   System.out.println("Error: Something went wrong");
                     
                     }
         

@@ -40,7 +40,7 @@ public void createTableCities(){
 							"phone VARCHAR(20) ," +
                                                         "address VARCHAR(100) NOT NULL," +
 							"city VARCHAR(50) NOT NULL," +
-                                                        "zipcode int NOT NULL" + 
+                                                        "zipcode int NOT NULL," + 
                                                         "goods VARCHAR(100) NOT NULL);";
 		if(this.executeQuery(query) == 0){
 			System.out.println("Table Supplier was successful created");
@@ -59,7 +59,7 @@ public void createTableCities(){
 public int insertNewSupplier(Supplier supplier){
 
         System.out.println(supplier.formatTostring());
-        String query = "INSERT INTO Supplier(id, name, country , phone, address, city, zipcode, goods) VALUES (" + supplier.formatTostring() + ");";
+        String query = "INSERT INTO Supplier(name, country , phone, address, city, zipcode, goods) VALUES (" + supplier.formatTostring() + ");";
         System.out.println(query);
      
         if(this.executeQuery(query) == 0){

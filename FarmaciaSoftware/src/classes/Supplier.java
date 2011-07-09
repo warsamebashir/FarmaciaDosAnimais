@@ -19,12 +19,12 @@ public class Supplier {
                 this.country = "";
 	}
 	
-	public Supplier(Integer id, String name, String country, String telephone,  String address, String city, String Zipcode, String goods){
+	public Supplier(String name, String country, String telephone,  String address, String city, String Zipcode, String goods){
 		this.setSupplierName(name);
 		this.telephone.setTelephoneUSAFormat(telephone);
                 this.setSupplierCountry(country);
-		this.setSupplierId(id);
-		this.address.setAddresStreetName(address);
+		//this.setSupplierId(id);
+		this.address.setStreetAddress(address);
                 this.address.setAddressZipCode(Zipcode);
                 this.address.setAddressCity(city);
 	}
@@ -106,7 +106,7 @@ public class Supplier {
 		return this.address;
 	}
 	
-	public Integer getSupplierId(){
+	public int getSupplierId(){
 		return this.supplierId;
 	}
         
@@ -115,7 +115,7 @@ public class Supplier {
             System.out.println("gets ");
                String supplier;
                supplier = "'" + this.getSupplierId()  + "'," + "'" + this.getSupplierName()  + "', '" + this.getSupplierCountry() + "', '" + this.getSupplierTelephone()
-                          + "', '" + this.getSupplierAddress().getAddressStreetName() + "', '" + this.getSupplierCity() + "', '" + this.getZipCode() + "', '" + this.getSupplierGoods() + "'"; 
+                          + "', '" + this.getSupplierAddress().getStreetAddress() + "', '" + this.getSupplierCity() + "', '" + this.getZipCode() + "', '" + this.getSupplierGoods() + "'"; 
                           
         return supplier;
         }

@@ -7,26 +7,15 @@ package classes;
  * 
  * class Address, defines an address
  * 
- *  private String addressStreetName: defines the avenue/street/highway name e.g: Larpenteur Avenue West
- *  private int addressNumber: defines the address number e.g: 1855
+ *  private String addressStreetName: defines the house number and avenue/street/highway name e.g: 125 Larpenteur Avenue West
  *  private addressZipCode: defines the address' zip code e.g: 55113
  *  private Locality locality: defines the remaining locality of an address  e.g: Dinkytown, Minneapolis, Minnesota, USA
  */
 public class Address {
-    
-        /*
-         *defines the city
-         */
-        private String addressCityName;
-    
 	/*
-	 * defines the address name
+	 * defines the address
 	 */
-	private String addressStreetName;
-	/*
-	 * defines the address' number
-	 */
-	private int addressNumber;
+	private String streetAddress;
 	/*
 	 * defines the address' zipCode
 	 */
@@ -36,23 +25,22 @@ public class Address {
 	 */
 	private Locality locality;
 
+        private String addressCity;
+        
 	/*
 	 * default constructor
 	 */
 	public Address(){
-		this.addressStreetName = "";
-		this.addressNumber = 0;
+		this.streetAddress = "";
 		this.addressZipCode = "";
-                this.addressCityName = "";
 		this.locality = new Locality();
 	}
-	
+
 	/*
 	 * overrode constructor, takes 4 arguments
 	 */
-	public Address(int number, String street,  String zipCode, Locality locality){
-		this.setAddresStreetName(street);
-		this.setAddressNumber(number);
+	public Address(String street,  String zipCode, Locality locality){
+		this.setStreetAddress(street);
 		this.setAddressZipCode(zipCode);
 		this.setAddressLocality(locality);
 	}
@@ -71,76 +59,56 @@ public class Address {
 		// TODO Auto-generated method stub
 		this.addressZipCode = zipCode;
 	}
-        
-        public void setAddressCity(String city) {
-		// TODO Auto-generated method stub
-		this.addressCityName = city;
-	}
-        
-	/*
-	 * sets the address number
-	 */
-	public void setAddressNumber(int number) {
-		// TODO Auto-generated method stub
-		if(number > 0){
-			this.addressNumber = number;
-		}
-		else{
-			this.addressNumber = 0;
-		}
-	}
 
-	/*
-	 * sets the street name
-	 */
-	public void setAddresStreetName(String street) {
-		// TODO Auto-generated method stub
-		this.addressStreetName = street;
-	}
-	/*
-         * return the city
-         */
-        public String getAddressCity(){
+        public void setAddressCity(String city){
         
-        return this.addressCityName;
+            this.addressCity = city;
         
         }
         
+	/*
+	 * sets the street name
+	 */
+	public void setStreetAddress(String street) {
+		// TODO Auto-generated method stub
+		this.streetAddress = street;
+	}
+
 	/*
 	 * returns the zipCode
 	 */
 	public String getAddressZipCode(){
 		return this.addressZipCode;
 	}
-	
-	/*
-	 * returns the number
-	 */
-	public int getAddressNumber(){
-		return this.addressNumber;
-	}
-	
+
 	/*
 	 * returns the name
 	 */
-	public String getAddressStreetName(){
-		return this.addressStreetName;
+	public String getStreetAddress(){
+		return this.streetAddress;
 	}
-	
+
 	/*
 	 * returns the locality
 	 */
 	public Locality getAddressLocality(){
 		return this.locality;
 	}
-	
+        
+        public String getAddressCity(){
+        
+        return this.addressCity;
+        
+        }
+        
+        
 	/*
 	 * examples:
 	 * 1855 Larpenteur Avenue West Apt 6 Saint Paul Minnesota USA - 55113
 	 * 
 	 */
 	public String formatToString(){
-		String address = this.getAddressNumber() + " " + this.getAddressStreetName() + ", " + this.locality.formatToString() + " - " + this.getAddressZipCode();
+		String address = '"' + this.getStreetAddress() + ", " + this.locality.formatToString() + " - " + this.getAddressZipCode() + '"';
 		return address;
 	}
 }

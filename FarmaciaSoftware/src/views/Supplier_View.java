@@ -46,6 +46,37 @@ public class Supplier_View extends javax.swing.JFrame {
 
         jTabbedPane2 = new javax.swing.JTabbedPane();
         SupplierTabPane = new javax.swing.JTabbedPane();
+        jPanel1 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        supplierLabel = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        supplierID = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        supplierGroup = new javax.swing.JTextField();
+        supplierName = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        supplierAddress = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        supplierCity = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        supplierState = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        supplierProduct = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        supplierZip = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        localChecked = new javax.swing.JCheckBox();
+        jCheckBox2 = new javax.swing.JCheckBox();
+        cancelButton = new javax.swing.JButton();
+        jLabel14 = new javax.swing.JLabel();
+        searchButton = new javax.swing.JButton();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        searchSupplier = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
@@ -74,263 +105,16 @@ public class Supplier_View extends javax.swing.JFrame {
         supplierGoods = new javax.swing.JTextArea();
         jLabel28 = new javax.swing.JLabel();
         supplierCityNew = new javax.swing.JTextField();
-        jPanel1 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        supplierLabel = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        supplierID = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        supplierGroup = new javax.swing.JTextField();
-        supplierName = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        supplierAddress = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        supplierCity = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        supplierState = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        supplierProduct = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
-        supplierZip = new javax.swing.JTextField();
-        jLabel12 = new javax.swing.JLabel();
-        localChecked = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        cancelButton = new javax.swing.JButton();
-        jLabel14 = new javax.swing.JLabel();
-        searchButton = new javax.swing.JButton();
-        jLabel13 = new javax.swing.JLabel();
 
         jTabbedPane2.setName("jTabbedPane2"); // NOI18N
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(153, 153, 153));
 
         SupplierTabPane.setName("Search"); // NOI18N
 
-        jPanel2.setName("jPanel2"); // NOI18N
-
-        jLabel15.setIcon(new javax.swing.ImageIcon("/Users/warz07/Downloads/line2.png")); // NOI18N
-        jLabel15.setText("jLabel1");
-        jLabel15.setName("jLabel15"); // NOI18N
-
-        jLabel16.setFont(new java.awt.Font("Lucida Grande", 1, 18));
-        jLabel16.setText("Add New Supplier");
-        jLabel16.setName("jLabel16"); // NOI18N
-
-        addButton.setIcon(new javax.swing.ImageIcon("/Users/warz07/Downloads/function_icon_set/add_48.png")); // NOI18N
-        addButton.setBorderPainted(false);
-        addButton.setName("addButton"); // NOI18N
-
-        jLabel17.setText("Add Supplier");
-        jLabel17.setName("jLabel17"); // NOI18N
-
-        cancelAddSupplier.setIcon(new javax.swing.ImageIcon("/Users/warz07/Downloads/function_icon_set/cancel_48.png")); // NOI18N
-        cancelAddSupplier.setBorderPainted(false);
-        cancelAddSupplier.setName("cancelAddSupplier"); // NOI18N
-
-        jLabel18.setText("Cancel");
-        jLabel18.setName("jLabel18"); // NOI18N
-
-        jLabel19.setText("Refresh");
-        jLabel19.setName("jLabel19"); // NOI18N
-
-        refreshButton.setIcon(new javax.swing.ImageIcon("/Users/warz07/Downloads/function_icon_set/refresh_48.png")); // NOI18N
-        refreshButton.setBorderPainted(false);
-        refreshButton.setName("refreshButton"); // NOI18N
-
-        jLabel20.setFont(new java.awt.Font("Lucida Grande", 0, 14));
-        jLabel20.setText("About the Company");
-        jLabel20.setName("jLabel20"); // NOI18N
-
-        jLabel21.setText("Supplier Full Name");
-        jLabel21.setName("jLabel21"); // NOI18N
-
-        supplierNameAdd.setName("supplierNameAdd"); // NOI18N
-
-        jSeparator1.setName("jSeparator1"); // NOI18N
-
-        jLabel22.setText("Supplier Address");
-        jLabel22.setName("jLabel22"); // NOI18N
-
-        supplierAddressAdd.setName("supplierAddressAdd"); // NOI18N
-
-        jLabel23.setText("Zip Code");
-        jLabel23.setName("jLabel23"); // NOI18N
-
-        SupplierZipCode.setName("SupplierZipCode"); // NOI18N
-
-        jLabel24.setText("Country");
-        jLabel24.setName("jLabel24"); // NOI18N
-
-        supplierCountry.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Guatemala", "Brazil", "Germany", "Italy", "France", "Portugal", "Jamaica", " " }));
-        supplierCountry.setName("supplierCountry"); // NOI18N
-
-        jCheckBox1.setText("United States");
-        jCheckBox1.setName("jCheckBox1"); // NOI18N
-
-        jLabel25.setText("Phone Number");
-        jLabel25.setName("jLabel25"); // NOI18N
-
-        supplierPhone.setName("supplierPhone"); // NOI18N
-
-        jLabel26.setFont(new java.awt.Font("Lucida Grande", 0, 12)); // NOI18N
-        jLabel26.setText("Format (xxx-xxx-xxxx)");
-        jLabel26.setName("jLabel26"); // NOI18N
-
-        jLabel27.setText("Nature of Goods or Services provided by Supplier ");
-        jLabel27.setName("jLabel27"); // NOI18N
-
-        descriptionGoods.setName("descriptionGoods"); // NOI18N
-
-        supplierGoods.setColumns(20);
-        supplierGoods.setRows(5);
-        supplierGoods.setName("supplierGoods"); // NOI18N
-        descriptionGoods.setViewportView(supplierGoods);
-
-        jLabel28.setText("City");
-        jLabel28.setName("jLabel28"); // NOI18N
-
-        supplierCityNew.setName("supplierCityNew"); // NOI18N
-
-        org.jdesktop.layout.GroupLayout jPanel2Layout = new org.jdesktop.layout.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel2Layout.createSequentialGroup()
-                .add(jLabel15, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 964, Short.MAX_VALUE)
-                .add(6, 6, 6))
-            .add(jPanel2Layout.createSequentialGroup()
-                .add(10, 10, 10)
-                .add(jLabel16)
-                .addContainerGap(793, Short.MAX_VALUE))
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(722, Short.MAX_VALUE)
-                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                    .add(jLabel17)
-                    .add(addButton))
-                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jPanel2Layout.createSequentialGroup()
-                        .add(18, 18, 18)
-                        .add(cancelAddSupplier)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(refreshButton))
-                    .add(jPanel2Layout.createSequentialGroup()
-                        .add(29, 29, 29)
-                        .add(jLabel18)
-                        .add(26, 26, 26)
-                        .add(jLabel19)))
-                .addContainerGap())
-            .add(jPanel2Layout.createSequentialGroup()
-                .add(11, 11, 11)
-                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jLabel27)
-                    .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
-                        .add(org.jdesktop.layout.GroupLayout.LEADING, descriptionGoods)
-                        .add(org.jdesktop.layout.GroupLayout.LEADING, jPanel2Layout.createSequentialGroup()
-                            .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                .add(jLabel25)
-                                .add(jLabel23)
-                                .add(jLabel24))
-                            .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                                .add(jPanel2Layout.createSequentialGroup()
-                                    .add(39, 39, 39)
-                                    .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                                        .add(supplierPhone)
-                                        .add(supplierCountry, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 189, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                                    .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                                    .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                        .add(jLabel26)
-                                        .add(jCheckBox1))
-                                    .add(4, 4, 4))
-                                .add(jPanel2Layout.createSequentialGroup()
-                                    .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                    .add(SupplierZipCode, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 135, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                    .add(201, 201, 201)))))
-                    .add(jSeparator1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 923, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jLabel20)
-                    .add(jPanel2Layout.createSequentialGroup()
-                        .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jLabel21)
-                            .add(jLabel22)
-                            .add(jLabel28))
-                        .add(18, 18, 18)
-                        .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(supplierCityNew, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 197, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                                .add(supplierAddressAdd)
-                                .add(supplierNameAdd, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)))))
-                .addContainerGap(36, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel2Layout.createSequentialGroup()
-                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .add(jLabel16)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jLabel15)
-                        .add(18, 18, 18)
-                        .add(jLabel20)
-                        .add(6, 6, 6)
-                        .add(jSeparator1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(10, 10, 10)
-                        .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(jLabel21)
-                            .add(supplierNameAdd, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                        .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(jLabel22)
-                            .add(supplierAddressAdd, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(jLabel28)
-                            .add(supplierCityNew, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                        .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(jLabel23)
-                            .add(SupplierZipCode, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                        .add(20, 20, 20)
-                        .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jPanel2Layout.createSequentialGroup()
-                                .add(30, 30, 30)
-                                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                                    .add(jLabel25)
-                                    .add(supplierPhone, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                            .add(jPanel2Layout.createSequentialGroup()
-                                .add(41, 41, 41)
-                                .add(jLabel26)))
-                        .add(18, 18, 18)
-                        .add(jLabel27)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(descriptionGoods, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(193, 193, 193)
-                        .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                            .add(addButton)
-                            .add(cancelAddSupplier)
-                            .add(refreshButton))
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(jLabel17)
-                            .add(jLabel18)
-                            .add(jLabel19)))
-                    .add(jPanel2Layout.createSequentialGroup()
-                        .add(295, 295, 295)
-                        .add(jLabel24))
-                    .add(jPanel2Layout.createSequentialGroup()
-                        .add(289, 289, 289)
-                        .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(supplierCountry, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jCheckBox1))))
-                .addContainerGap(27, Short.MAX_VALUE))
-        );
-
-        SupplierTabPane.addTab("Add Supplier", jPanel2);
-
+        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.setName("jPanel1"); // NOI18N
 
         jScrollPane1.setName("jScrollPane1"); // NOI18N
@@ -349,7 +133,7 @@ public class Supplier_View extends javax.swing.JFrame {
         jTable1.setName("jTable1"); // NOI18N
         jScrollPane1.setViewportView(jTable1);
 
-        supplierLabel.setFont(new java.awt.Font("Lucida Grande", 1, 18));
+        supplierLabel.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         supplierLabel.setText("Search Supplier");
         supplierLabel.setName("supplierLabel"); // NOI18N
 
@@ -371,10 +155,6 @@ public class Supplier_View extends javax.swing.JFrame {
         supplierGroup.setName("supplierGroup"); // NOI18N
 
         supplierName.setName("supplierName"); // NOI18N
-
-        jLabel5.setFont(new java.awt.Font("Lucida Grande", 0, 14));
-        jLabel5.setText("Supplier Address Information");
-        jLabel5.setName("jLabel5"); // NOI18N
 
         jLabel6.setText("Address");
         jLabel6.setName("jLabel6"); // NOI18N
@@ -428,6 +208,12 @@ public class Supplier_View extends javax.swing.JFrame {
         jLabel13.setText("Search");
         jLabel13.setName("jLabel13"); // NOI18N
 
+        jLabel29.setIcon(new javax.swing.ImageIcon("/Users/warz07/Downloads/1310172118_agency.png")); // NOI18N
+        jLabel29.setName("jLabel29"); // NOI18N
+
+        searchSupplier.setIcon(new javax.swing.ImageIcon("/Users/warz07/Downloads/function_icon_set/search_48.png")); // NOI18N
+        searchSupplier.setName("searchSupplier"); // NOI18N
+
         org.jdesktop.layout.GroupLayout jPanel1Layout = new org.jdesktop.layout.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -436,134 +222,373 @@ public class Supplier_View extends javax.swing.JFrame {
                 .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
+                        .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
+                            .add(org.jdesktop.layout.GroupLayout.LEADING, jPanel1Layout.createSequentialGroup()
+                                .add(jLabel10)
+                                .add(18, 18, 18)
+                                .add(supplierProduct))
+                            .add(org.jdesktop.layout.GroupLayout.LEADING, jPanel1Layout.createSequentialGroup()
+                                .add(jLabel4)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                                .add(supplierGroup))
+                            .add(org.jdesktop.layout.GroupLayout.LEADING, jPanel1Layout.createSequentialGroup()
+                                .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                    .add(jLabel3)
+                                    .add(jLabel2))
+                                .add(18, 18, 18)
+                                .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                                    .add(supplierName)
+                                    .add(supplierID, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 120, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
+                        .add(56, 56, 56)
                         .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(jPanel1Layout.createSequentialGroup()
-                                .add(supplierLabel)
-                                .add(270, 270, 270)
-                                .add(jLabel5)
-                                .add(347, 347, 347))
+                                .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                    .add(jLabel6)
+                                    .add(jLabel7)
+                                    .add(jLabel8))
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                                .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                    .add(supplierCity, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 187, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                    .add(supplierAddress, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 238, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                    .add(jPanel1Layout.createSequentialGroup()
+                                        .add(supplierState, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 52, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                        .add(18, 18, 18)
+                                        .add(jLabel9))))
                             .add(jPanel1Layout.createSequentialGroup()
-                                .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
-                                    .add(org.jdesktop.layout.GroupLayout.LEADING, jPanel1Layout.createSequentialGroup()
-                                        .add(jLabel10)
-                                        .add(18, 18, 18)
-                                        .add(supplierProduct))
-                                    .add(org.jdesktop.layout.GroupLayout.LEADING, jPanel1Layout.createSequentialGroup()
-                                        .add(jLabel4)
-                                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                                        .add(supplierGroup))
-                                    .add(org.jdesktop.layout.GroupLayout.LEADING, jPanel1Layout.createSequentialGroup()
-                                        .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                            .add(jLabel3)
-                                            .add(jLabel2))
-                                        .add(18, 18, 18)
-                                        .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                                            .add(supplierName)
-                                            .add(supplierID, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 120, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 177, Short.MAX_VALUE)
+                                .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                    .add(jLabel11)
+                                    .add(jLabel12))
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                                 .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                                     .add(jPanel1Layout.createSequentialGroup()
-                                        .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                            .add(jLabel6)
-                                            .add(jLabel7)
-                                            .add(jLabel8))
-                                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                                        .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                            .add(supplierCity, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 187, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                            .add(supplierAddress, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 238, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                            .add(jPanel1Layout.createSequentialGroup()
-                                                .add(supplierState, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 52, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                                .add(18, 18, 18)
-                                                .add(jLabel9))))
-                                    .add(jPanel1Layout.createSequentialGroup()
-                                        .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                            .add(jLabel11)
-                                            .add(jLabel12))
-                                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                        .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                            .add(jPanel1Layout.createSequentialGroup()
-                                                .add(localChecked)
-                                                .add(18, 18, 18)
-                                                .add(jCheckBox2))
-                                            .add(supplierZip, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 120, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
-                                .add(137, 137, 137)
+                                        .add(localChecked)
+                                        .add(18, 18, 18)
+                                        .add(jCheckBox2))
+                                    .add(supplierZip, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 120, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
+                        .add(44, 44, 44)
+                        .add(searchSupplier, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 104, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 202, Short.MAX_VALUE)
+                        .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                            .add(searchButton, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 49, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                .add(jLabel13)
                                 .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                                    .add(searchButton, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 49, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                    .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                        .add(jLabel13)
-                                        .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                                            .add(jLabel14)
-                                            .add(cancelButton, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 46, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
-                                .add(69, 69, 69))))
-                    .add(jLabel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 984, Short.MAX_VALUE)
+                                    .add(jLabel14)
+                                    .add(cancelButton, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 46, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
+                        .add(69, 69, 69))
                     .add(jPanel1Layout.createSequentialGroup()
-                        .add(10, 10, 10)
-                        .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 942, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                        .add(6, 6, 6)
+                        .add(jLabel29)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(supplierLabel))
+                    .add(jPanel1Layout.createSequentialGroup()
+                        .add(12, 12, 12)
+                        .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 763, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
+            .add(jPanel1Layout.createSequentialGroup()
+                .add(jLabel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 984, Short.MAX_VALUE)
+                .add(92, 92, 92))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jLabel5)
-                    .add(supplierLabel))
-                .add(2, 2, 2)
-                .add(jLabel1)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jLabel29)
                     .add(jPanel1Layout.createSequentialGroup()
-                        .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(jLabel2)
-                            .add(supplierID, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                        .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(jLabel3)
-                            .add(supplierName, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                        .add(20, 20, 20)
-                        .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(jLabel4)
-                            .add(supplierGroup, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                        .add(18, 18, 18)
-                        .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(jLabel10)
-                            .add(supplierProduct, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap()
+                        .add(supplierLabel)))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jLabel1)
+                .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
                     .add(jPanel1Layout.createSequentialGroup()
-                        .add(searchButton)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jLabel13)
-                        .add(18, 18, 18)
-                        .add(cancelButton, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                        .add(jLabel14))
+                        .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(jPanel1Layout.createSequentialGroup()
+                                .add(10, 10, 10)
+                                .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                    .add(jPanel1Layout.createSequentialGroup()
+                                        .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                                            .add(jLabel2)
+                                            .add(supplierID, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                                        .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                                            .add(jLabel3)
+                                            .add(supplierName, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                                        .add(20, 20, 20)
+                                        .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                                            .add(jLabel4)
+                                            .add(supplierGroup, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                                        .add(18, 18, 18)
+                                        .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                                            .add(jLabel10)
+                                            .add(supplierProduct, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                                    .add(jPanel1Layout.createSequentialGroup()
+                                        .add(searchButton)
+                                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                        .add(jLabel13)
+                                        .add(18, 18, 18)
+                                        .add(cancelButton, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                                        .add(jLabel14))))
+                            .add(jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                                    .add(jLabel6)
+                                    .add(supplierAddress, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                                .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                                    .add(jLabel7)
+                                    .add(supplierCity, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                                    .add(jLabel8)
+                                    .add(supplierState, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                    .add(jLabel9))
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                                    .add(jLabel11)
+                                    .add(supplierZip, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                                    .add(jLabel12)
+                                    .add(localChecked)
+                                    .add(jCheckBox2))))
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED, 22, Short.MAX_VALUE))
                     .add(jPanel1Layout.createSequentialGroup()
-                        .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(jLabel6)
-                            .add(supplierAddress, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                        .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(jLabel7)
-                            .add(supplierCity, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(jLabel8)
-                            .add(supplierState, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jLabel9))
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(jLabel11)
-                            .add(supplierZip, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(jLabel12)
-                            .add(localChecked)
-                            .add(jCheckBox2))))
-                .add(18, 18, 18)
-                .add(jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 507, Short.MAX_VALUE)
-                .addContainerGap())
+                        .add(searchSupplier)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 326, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(16, 16, 16))
         );
 
         SupplierTabPane.addTab("Search Supplier", jPanel1);
+
+        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel2.setName("jPanel2"); // NOI18N
+
+        jLabel15.setIcon(new javax.swing.ImageIcon("/Users/warz07/Downloads/line2.png")); // NOI18N
+        jLabel15.setText("jLabel1");
+        jLabel15.setName("jLabel15"); // NOI18N
+
+        jLabel16.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        jLabel16.setText("Add New Supplier");
+        jLabel16.setName("jLabel16"); // NOI18N
+
+        addButton.setIcon(new javax.swing.ImageIcon("/Users/warz07/Downloads/function_icon_set/add_48.png")); // NOI18N
+        addButton.setBorderPainted(false);
+        addButton.setName("addButton"); // NOI18N
+
+        jLabel17.setText("Add Supplier");
+        jLabel17.setName("jLabel17"); // NOI18N
+
+        cancelAddSupplier.setIcon(new javax.swing.ImageIcon("/Users/warz07/Downloads/function_icon_set/cancel_48.png")); // NOI18N
+        cancelAddSupplier.setBorderPainted(false);
+        cancelAddSupplier.setName("cancelAddSupplier"); // NOI18N
+
+        jLabel18.setText("Cancel");
+        jLabel18.setName("jLabel18"); // NOI18N
+
+        jLabel19.setText("Refresh");
+        jLabel19.setName("jLabel19"); // NOI18N
+
+        refreshButton.setIcon(new javax.swing.ImageIcon("/Users/warz07/Downloads/function_icon_set/refresh_48.png")); // NOI18N
+        refreshButton.setBorderPainted(false);
+        refreshButton.setName("refreshButton"); // NOI18N
+
+        jLabel20.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(204, 0, 0));
+        jLabel20.setText("About the Company");
+        jLabel20.setName("jLabel20"); // NOI18N
+
+        jLabel21.setText("Supplier Full Name");
+        jLabel21.setName("jLabel21"); // NOI18N
+
+        supplierNameAdd.setName("supplierNameAdd"); // NOI18N
+
+        jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator1.setName("jSeparator1"); // NOI18N
+
+        jLabel22.setText("Supplier Address");
+        jLabel22.setName("jLabel22"); // NOI18N
+
+        supplierAddressAdd.setName("supplierAddressAdd"); // NOI18N
+
+        jLabel23.setText("Zip Code");
+        jLabel23.setName("jLabel23"); // NOI18N
+
+        SupplierZipCode.setName("SupplierZipCode"); // NOI18N
+
+        jLabel24.setText("Country");
+        jLabel24.setName("jLabel24"); // NOI18N
+
+        supplierCountry.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Guatemala", "Brazil", "Germany", "Italy", "France", "Portugal", "Jamaica", " " }));
+        supplierCountry.setName("supplierCountry"); // NOI18N
+
+        jCheckBox1.setText("United States");
+        jCheckBox1.setName("jCheckBox1"); // NOI18N
+
+        jLabel25.setText("Phone Number");
+        jLabel25.setName("jLabel25"); // NOI18N
+
+        supplierPhone.setName("supplierPhone"); // NOI18N
+
+        jLabel26.setFont(new java.awt.Font("Lucida Grande", 0, 12));
+        jLabel26.setText("Format (xxx-xxx-xxxx)");
+        jLabel26.setName("jLabel26"); // NOI18N
+
+        jLabel27.setText("Nature of Goods or Services provided by Supplier ");
+        jLabel27.setName("jLabel27"); // NOI18N
+
+        descriptionGoods.setName("descriptionGoods"); // NOI18N
+
+        supplierGoods.setColumns(20);
+        supplierGoods.setRows(5);
+        supplierGoods.setName("supplierGoods"); // NOI18N
+        descriptionGoods.setViewportView(supplierGoods);
+
+        jLabel28.setText("City");
+        jLabel28.setName("jLabel28"); // NOI18N
+
+        supplierCityNew.setName("supplierCityNew"); // NOI18N
+
+        jLabel5.setIcon(new javax.swing.ImageIcon("/Users/warz07/Downloads/1310172118_agency.png")); // NOI18N
+        jLabel5.setName("jLabel5"); // NOI18N
+
+        org.jdesktop.layout.GroupLayout jPanel2Layout = new org.jdesktop.layout.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel2Layout.createSequentialGroup()
+                .add(jLabel15, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 964, Short.MAX_VALUE)
+                .add(6, 6, 6))
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(536, Short.MAX_VALUE)
+                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                    .add(jLabel17)
+                    .add(addButton))
+                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jPanel2Layout.createSequentialGroup()
+                        .add(18, 18, 18)
+                        .add(cancelAddSupplier)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(refreshButton))
+                    .add(jPanel2Layout.createSequentialGroup()
+                        .add(29, 29, 29)
+                        .add(jLabel18)
+                        .add(26, 26, 26)
+                        .add(jLabel19)))
+                .add(198, 198, 198))
+            .add(jPanel2Layout.createSequentialGroup()
+                .add(9, 9, 9)
+                .add(jLabel5)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jLabel16)
+                .addContainerGap(534, Short.MAX_VALUE))
+            .add(jPanel2Layout.createSequentialGroup()
+                .add(11, 11, 11)
+                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jLabel27)
+                    .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
+                        .add(org.jdesktop.layout.GroupLayout.LEADING, descriptionGoods)
+                        .add(org.jdesktop.layout.GroupLayout.LEADING, jPanel2Layout.createSequentialGroup()
+                            .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                .add(jLabel25)
+                                .add(jLabel24))
+                            .add(39, 39, 39)
+                            .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                                .add(supplierPhone)
+                                .add(supplierCountry, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 189, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                            .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                            .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                .add(jLabel26)
+                                .add(jCheckBox1))
+                            .add(4, 4, 4)))
+                    .add(jSeparator1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 849, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jLabel20)
+                    .add(jPanel2Layout.createSequentialGroup()
+                        .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(jLabel21)
+                            .add(jLabel22)
+                            .add(jLabel28)
+                            .add(jLabel23))
+                        .add(18, 18, 18)
+                        .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(SupplierZipCode, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 135, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(supplierCityNew, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 197, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                                .add(supplierAddressAdd)
+                                .add(supplierNameAdd, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)))))
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel2Layout.createSequentialGroup()
+                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jLabel5)
+                    .add(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .add(jLabel16)))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jLabel15)
+                .add(18, 18, 18)
+                .add(jLabel20)
+                .add(4, 4, 4)
+                .add(jSeparator1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(10, 10, 10)
+                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jLabel21)
+                    .add(supplierNameAdd, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jLabel22)
+                    .add(supplierAddressAdd, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jLabel28)
+                    .add(supplierCityNew, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(SupplierZipCode, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jLabel23))
+                .add(18, 18, 18)
+                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jPanel2Layout.createSequentialGroup()
+                        .add(4, 4, 4)
+                        .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(jPanel2Layout.createSequentialGroup()
+                                .add(30, 30, 30)
+                                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                                    .add(jLabel25)
+                                    .add(supplierPhone, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                            .add(jPanel2Layout.createSequentialGroup()
+                                .add(41, 41, 41)
+                                .add(jLabel26)))
+                        .add(18, 18, 18)
+                        .add(jLabel27)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(descriptionGoods, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                        .add(supplierCountry, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(jCheckBox1))
+                    .add(jPanel2Layout.createSequentialGroup()
+                        .add(1, 1, 1)
+                        .add(jLabel24)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 171, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 28, Short.MAX_VALUE)
+                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                    .add(addButton)
+                    .add(cancelAddSupplier)
+                    .add(refreshButton))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jLabel17)
+                    .add(jLabel18)
+                    .add(jLabel19))
+                .add(32, 32, 32))
+        );
+
+        SupplierTabPane.addTab("Add Supplier", jPanel2);
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -571,15 +596,15 @@ public class Supplier_View extends javax.swing.JFrame {
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(layout.createSequentialGroup()
                 .add(52, 52, 52)
-                .add(SupplierTabPane, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 991, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(58, Short.MAX_VALUE))
+                .add(SupplierTabPane, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 811, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .add(SupplierTabPane, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .add(layout.createSequentialGroup()
+                .addContainerGap()
+                .add(SupplierTabPane, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 698, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         pack();
@@ -606,17 +631,17 @@ public class Supplier_View extends javax.swing.JFrame {
     
     public void setSupplier(){
     
-        String supplierName = this.supplierName.getText();
-        int supplierID = Integer.parseInt(this.supplierID.getText());
-        String supplierPhone = this.supplierPhone.getText();
-        String supplierZip = this.SupplierZipCode.getText();
-        String supplierCity = this.supplierCityNew.getText();
-        String supplierAddress = this.supplierAddressAdd.getText();
-        String supplierGoods = this.supplierGoods.getText();
-        String supplierCountry = (String)this.supplierCountry.getSelectedItem();
+        String SupplierName = this.supplierName.getText();
+        int SupplierID = Integer.parseInt(this.supplierID.getText());
+        String SupplierPhone = this.supplierPhone.getText();
+        String SupplierZip = this.SupplierZipCode.getText();
+        String SupplierCity = this.supplierCityNew.getText();
+        String SupplierAddress = this.supplierAddressAdd.getText();
+        String SupplierGoods = this.supplierGoods.getText();
+        String SupplierCountry = (String)this.supplierCountry.getSelectedItem();
         
-        this.supplier = new Supplier(supplierID, supplierName, supplierCountry, supplierPhone, supplierAddress, supplierCity, supplierZip, supplierGoods);
-    
+        this.supplier = new Supplier(SupplierName, SupplierCountry, SupplierPhone, SupplierAddress, SupplierCity, SupplierZip, SupplierGoods);
+    System.out.println("supplier info " + this.supplier.formatTostring());
     }
     
    public Supplier getSupplier(){
@@ -657,6 +682,7 @@ public class Supplier_View extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -673,6 +699,7 @@ public class Supplier_View extends javax.swing.JFrame {
     private javax.swing.JCheckBox localChecked;
     private javax.swing.JButton refreshButton;
     private javax.swing.JButton searchButton;
+    private javax.swing.JButton searchSupplier;
     private javax.swing.JTextField supplierAddress;
     private javax.swing.JTextField supplierAddressAdd;
     private javax.swing.JTextField supplierCity;
@@ -697,6 +724,7 @@ public class Supplier_View extends javax.swing.JFrame {
     public void addCloseListener(ActionListener closeListener){
     
     cancelButton.addActionListener(closeListener);
+    cancelAddSupplier.addActionListener(closeListener);
     }
     
     /*Local Variables being set declerations*/
